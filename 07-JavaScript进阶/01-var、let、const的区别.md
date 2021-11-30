@@ -27,7 +27,7 @@ console.log(window.b); // 打印结果：undefined
 ```
 
 ```js
-let c = '我是c';
+const c = '我是c';
 console.log(c); // 打印结果：我是c
 console.log(window.b); // 打印结果：undefined
 ```
