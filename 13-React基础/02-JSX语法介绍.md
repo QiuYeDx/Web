@@ -297,6 +297,61 @@ React在解析所有标签的时候，是以标签的首字母来区分的：如
 
 上方代码中，我们是想把整个person对象传递给子组件，所以采用了`...Obj 语法`语法。传递给子组件后，子组件获取的数据仅仅只是可读的。
 
+QiuYeDx's PS:props对象储存了从Hello后面传过来的“属性”（或叫“参数”），如<Hello name="QiuYeDx" age=13></Hello> ，则需要用props.name和props.age来访问这两个属性/参数，不能直接“打印”props对象。而上面示例中用到的属性扩散{...person}语法不仅可以扩散person这样的类json对象，还可以扩散数组，如{...["QiuYeDx", 15]}，并用props[0]和props[1]来访问。示例如下：
+
+```react
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 引入React相关的js库 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- 生产环境中不建议使用 -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <div id="app"></div>
+
+    <!-- 注意，这一行的 type 是写 "text/babel"，而不是 "text/javascript" -->
+    <script type="text/babel">
+        // 父组件中的数据
+        var person = {
+          name: "qianguyihao",
+          age: 27,
+          gender: "男",
+          address: "深圳"
+        };
+  
+        // 在子组件中，如果想要使用外部传递过来的数据，必须显示的在 构造函数参数列表中，定义 props 属性来接收
+        // 通过 props 得到的任何数据都是只读的，不能重新赋值
+        function Hello(props) {
+          return (
+            <div>
+              <h3>这是 Hello子组件 中定义的元素： {props[0]}, {props[1]}</h3>
+            </div>
+          );
+        }
+  
+        ReactDOM.render(
+            //注意：这里的 ...Obj 语法，是 ES6中的属性扩散，表示：把这个对象上的所有属性，展开了，放到这个位置
+          <div>
+            <Hello {...["QiuYeDx", 15]}> </Hello>
+          </div>,
+          document.getElementById("app")
+        );
+      </script>
+</body>
+
+</html>
+```
+
+
+
 ## class 关键字的介绍
 
 面向对象语言的三个特性：封装、继承、多态。多态 和 接口、虚拟方法有关。

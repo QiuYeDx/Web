@@ -84,7 +84,7 @@ ECMAScript 是 JS 的语法；DOM 和 BOM 浏览器端为 JS 提供的 API。
 与 PHP、JSP 等相比（PHP、JSP、.net 都需要运行在服务器程序上，Apache、Nginx、Tomcat、IIS。
 ），Node.js 跳过了 Apache、Nginx、IIS 等 HTTP 服务器，它自己不用建设在任何服务器软件之上。Node.js 的许多设计理念与经典架构（LAMP = Linux + Apache + MySQL + PHP）有着很大的不同，可以提供强大的伸缩能力。Node.js 没有 web 容器。
 
-JS 语言非常灵活，使得它在严谨性方面不如 Java 等传统的静态语言。JS 是一门动态语言，而且融合了面向对象和函数式编程这两种编程范式。
+### JS 语言非常灵活，使得它在严谨性方面不如 Java 等传统的静态语言。JS 是一门动态语言，而且融合了面向对象和函数式编程这两种编程范式。
 
 随着 ES6、ES7 等 JS 语法规范的出现，以及浏览器对这些规范的支持，使得我们可以用更为现代化的 JS 语言特性，来编写现代化的应用。
 
