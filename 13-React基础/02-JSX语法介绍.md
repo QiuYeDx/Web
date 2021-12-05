@@ -297,7 +297,7 @@ React在解析所有标签的时候，是以标签的首字母来区分的：如
 
 上方代码中，我们是想把整个person对象传递给子组件，所以采用了`...Obj 语法`语法。传递给子组件后，子组件获取的数据仅仅只是可读的。
 
-QiuYeDx's PS:props对象储存了从Hello后面传过来的“属性”（或叫“参数”），如<Hello name="QiuYeDx" age=13></Hello> ，则需要用props.name和props.age来访问这两个属性/参数，不能直接“打印”props对象。而上面示例中用到的属性扩散{...person}语法不仅可以扩散person这样的类json对象，还可以扩散数组，如{...["QiuYeDx", 15]}，并用props[0]和props[1]来访问。示例如下：
+**QiuYeDx's PS**:props对象储存了从Hello后面传过来的“属性”（或叫“参数”），如<Hello name="QiuYeDx" age=13></Hello> ，则需要用props.name和props.age来访问这两个属性/参数，不能直接“打印”props对象。而上面示例中用到的属性扩散{...person}语法不仅可以扩散person这样的类json对象，还可以扩散数组，如{...["QiuYeDx", 15]}，并用props[0]和props[1]来访问。示例如下：
 
 ```react
 <!DOCTYPE html>
